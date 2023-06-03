@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- Form View-->
+        <record id="view_celebrity_celebrity_form" model="ir.ui.view">
+            <field name="name">birthday.celebration.form</field>
+            <field name="model">birthday.celebration</field>
+            <field name="arch" type="xml">
+                <form string="Birthday.celebration">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="birthdate"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--Tree Views-->
+        <record id="view_celebrity_celebrity_tree" model="ir.ui.view">
+            <field name="name">birthday.celebration.tree</field>
+            <field name="model">birthday.celebration</field>
+            <field name="arch" type="xml">
+                <tree string="Birthday.celebration">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="birthdate"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_birthday_celebration" model="ir.actions.act_window">
+            <field name="name">Celebration</field>
+            <field name="res_model">birthday.celebration</field>
+            <field name="view_mode">tree,form</field>
+        </record>}
+
+        <!--Menus-->
+        <menuitem id="notification_menu" name="Notification" sequence="1"/>
+        <menuitem id="celebration_menu" name="Celebration" sequence="2" action="action_birthday_celebration"
+                  parent="notification_menu"/>
+
+    </data>
+</odoo>

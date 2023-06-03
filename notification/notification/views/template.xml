@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Birthday Event Email Template -->
+        <record id="mail_template_birthday_event" model="mail.template">
+            <field name="name">Birthday Event</field>
+            <field name="model_id" ref="notification.model_birthday_celebration"/>
+            <field name="subject">Happy Birthday, ${object.name}!</field>
+            <field name="email_from">{{ user.email_formatted }}</field>
+            <field name="email_to">${object.partner_id.email}</field>
+            <field name="auto_delete">True</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="body_html"><![CDATA[
+                <p>Dear ${object.partner_id.name},</p>
+                <p>Happy Birthday! We would like to invite you to celebrate this special occasion with us:</p>
+                <ul>
+                    <li><strong>Date:</strong> ${object.date_begin}</li>
+
+                </ul>
+                <p>Join us for an unforgettable birthday event. We look forward to celebrating with you!</p>
+                <p>Best regards,</p>
+            ]]></field>
+        </record>
+    </data>
+</odoo>
+
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; Birthday Event Email Template &ndash;&gt;-->
+<!--        <record id="mail_template_birthday_event" model="mail.template">-->
+<!--            <field name="name">Birthday Event</field>-->
+<!--            <field name="model_id" ref="notification.model_birthday_celebration"/>-->
+<!--            <field name="subject">Happy Birthday, {object.name}!</field>-->
+<!--            <field name="email_from">{{ user.email_formatted }}</field>-->
+<!--            <field name="email_to">{object.email}</field>-->
+<!--            <field name="auto_delete">True</field>-->
+<!--            <field name="body_html"><![CDATA[-->
+<!--                <p>Dear ${object.name},</p>-->
+<!--                <p>Happy Birthday! We would like to wish you a fantastic day filled with joy, laughter, and wonderful moments.</p>-->
+<!--                <p>In celebration of your special day, we are delighted to invite you to a birthday event:</p>-->
+<!--                <ul>-->
+<!--                    <li><strong>Event Name:</strong> ${object.name}</li>-->
+<!--                    <li><strong>Date:</strong> ${object.birthdate}</li>-->
+<!--                </ul>-->
+<!--                <p>Please join us for this joyful occasion as we celebrate together.</p>-->
+<!--                <p>Best regards,</p>-->
+<!--            ]]></field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->
+
+
+<!--<odoo>-->
+<!--    <data>-->
+
+<!--        <record id="email_template_anniversary_mail" model="mail.template">-->
+<!--            <field name="name">Invite: Anniversary Mail</field>-->
+<!--            <field name="model_id" ref="notification.model_birthday_celebration"/>-->
+<!--            <field name="email_from">{{ user.email_formatted }}</field>-->
+<!--            <field name="email_to">{{ (object.email and '"%s" &lt;%s&gt;' % (object.name, object.email))  }}</field>-->
+<!--            <field name="subject">Anniversary Mail {{ object.name}})</field>-->
+<!--            <field name="body_html" type="html">-->
+<!--                <div style="margin: 0px; padding: 0px;">-->
+<!--                    <p style="margin: 0px; padding: 0px; font-size: 13px;">-->
+<!--                        Dear-->
+<!--                        <t t-if="object.name">-->
+<!--                            <t t-out="object.name or ''"/>-->
+<!--                        </t>-->
+<!--                        <br /><br />-->
+<!--                        <t t-if="object.birthdate">-->
+<!--                             You have appointment on <strong t-out="object.birthdate or ''"></strong>-->
+<!--                        </t>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </field>-->
+<!--            <field name="auto_delete" eval="True"/>-->
+<!--        </record>-->
+
+<!--    </data>-->
+<!--</odoo>-->
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<odoo>-->
+<!--    <data>-->
+<!--        &lt;!&ndash; Birthday Event Email Template &ndash;&gt;-->
+<!--        <record id="mail_template_birthday_event" model="mail.template">-->
+<!--            <field name="name">Birthday Event</field>-->
+<!--            <field name="model_id" ref="notification.model_birthday_celebration"/>-->
+<!--            <field name="subject">Happy Birthday, {object.name}!</field>-->
+<!--            <field name="email_from">{{ user.email_formatted }}</field>-->
+<!--            <field name="email_to">{object.email}</field>-->
+<!--            <field name="auto_delete">True</field>-->
+<!--            <field name="body_html"><![CDATA[-->
+<!--                <p>Dear ${object.name},</p>-->
+<!--                <p>Happy Birthday! We would like to wish you a fantastic day filled with joy, laughter, and wonderful moments.</p>-->
+<!--                <p>In celebration of your special day, we are delighted to invite you to a birthday event:</p>-->
+<!--                <ul>-->
+<!--                    <li><strong>Event Name:</strong> ${object.name}</li>-->
+<!--                    <li><strong>Date:</strong> ${object.birthdate}</li>-->
+<!--                </ul>-->
+<!--                <p>Please join us for this joyful occasion as we celebrate together.</p>-->
+<!--                <p>Best regards,</p>-->
+<!--            ]]></field>-->
+<!--        </record>-->
+<!--    </data>-->
+<!--</odoo>-->

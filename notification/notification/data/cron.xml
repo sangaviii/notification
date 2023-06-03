@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ir_cron_set_dob" model="ir.cron">
+            <field name="name">Set DOB Cron</field>
+            <field name="model_id" ref="model_birthday_celebration"/>
+            <field name="state">code</field>
+            <field name="code">model.set_dob()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+        </record>
+    </data>
+</odoo>
